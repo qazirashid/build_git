@@ -22,9 +22,9 @@ Create a new directory. let's start by cloning the git repository.
 
     git clone https://github.com/git/git.git ./
 
-Then look at the log in reverse order. 
+Then look at the log in reverse order and get the first commit message and commit hash. 
 
-    git log --reverse
+    git log --reverse -n 1
 
 and it yeilds the output.
 
@@ -34,3 +34,20 @@ and it yeilds the output.
 	Date:   Thu Apr 7 15:13:13 2005 -0700
 
 	Initial revision of "git", the information manager from hell
+Let's checkout the very first commit. 
+
+    git checkout e83c5163316f89bfbde7d9ab23ca2e25604af290
+
+This action put git repository in a detached head state. A good resource for understanding what a detached head state is can be found at youtube. 
+
+	https://youtube.com/watch?v=HvDjbAa9ZsY
+
+and we have got the files for the very first commit. 
+
+
+	cache.h cat-file.c commit-tree.c init-db.c Makefile read-cache.c README read-tree.c show-diff.c update-cache.c write-tree.c
+
+the first commit is ready for study. 
+Instead of dumping all notes in one big README file, I think it will be good to split it in chapters. One chapter per commit should be OK. namaing is of the type 'c1.md, c2.md, ... cx.md' where c1.md is the notes for first commit. 
+
+
