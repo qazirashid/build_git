@@ -25,3 +25,12 @@ Create a new directory. let's start by cloning the git repository.
 Then look at the log in reverse order. 
 
     git log --reverse
+
+and it yeilds the output.
+
+    
+	commit e83c5163316f89bfbde7d9ab23ca2e25604af290
+	Author: Linus Torvalds <torvalds@ppc970.osdl.org>
+	Date:   Thu Apr 7 15:13:13 2005 -0700
+
+	Initial revision of "git", the information manager from hell
