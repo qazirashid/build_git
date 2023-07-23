@@ -24,7 +24,7 @@ Create a new directory. let's start by cloning the git repository.
 
 Then look at the log in reverse order and get the first commit message and commit hash. 
 
-    git log --reverse -n 1
+    git log --reverse | head
 
 and it yeilds the output.
 
@@ -48,6 +48,7 @@ and we have got the files for the very first commit.
 	cache.h cat-file.c commit-tree.c init-db.c Makefile read-cache.c README read-tree.c show-diff.c update-cache.c write-tree.c
 
 the first commit is ready for study. 
-Instead of dumping all notes in one big README file, I think it will be good to split it in chapters. One chapter per commit should be OK. namaing is of the type 'c1.md, c2.md, ... cx.md' where c1.md is the notes for first commit. 
+Instead of dumping all notes in one big README file, I think it will be good to split it in chapters. One chapter per commit should be OK. I will put these in the 'notes' directory. namaing is of the type 'c1.md, c2.md, ... cx.md' where c1.md is the notes for first commit. 
 
+I'll also copy across the code I am studying from the git repository to this repository to keep track of the changes I'll make to the code. This will go in the src directory. 
 
