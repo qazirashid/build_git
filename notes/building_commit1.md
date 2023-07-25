@@ -35,5 +35,16 @@ Let's edit line 11 in the Makefile to `LIBS= -lssl -lcrypto -lz` and try again.
 Yay. It builds!. 
 Lots of warnings, but no error. That's good progress. 
 
+## Warning 1: Implicit declarations
+Function `memcmp` has implicit declaration in `update-cache.c`. OK we follow compiler suggestion and include it in `cache.h` because that's include in turn into `update-cache.c`.
+Cleaning and building again, this warning disappears. Good.
+
+## Warning 2: Deprecated function in libcrypto
+OK, gcc is complaining about deprecated functions `SHA1_Init` etc since openssl3 release. I can't do much about it because the original code was written in 2005. Maybe these functions were deprecated at a later date (openSSL3 released in 2021). I can't address this one and will have to live with these warning because I am not sure what are the replacement functions and whether they will work as Linux intended. So in the interest of sticking with what Linus built, let's ignore these warnings. This is an issue of use of outdated library functions. Not ideal but it should work. 
+
+##Warning 3: No return value for main()
+For `init-db.c`, gcc complains that `main` should return an int but line 31 has a return statement with no value. Fair enough. why is return specified with no value? This is an error situation so 0 should not be returned. I suppose anything else is fine. But gcc is complaining so let's specify something. How about '-1'. Not sure if these return codes will get used later and I'll break something, but at least I am returning something deterministic. 
+
+
 
   
