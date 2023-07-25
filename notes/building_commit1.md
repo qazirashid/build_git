@@ -44,6 +44,13 @@ OK, gcc is complaining about deprecated functions `SHA1_Init` etc since openssl3
 
 ##Warning 3: No return value for main()
 For `init-db.c`, gcc complains that `main` should return an int but line 31 has a return statement with no value. Fair enough. why is return specified with no value? This is an error situation so 0 should not be returned. I suppose anything else is fine. But gcc is complaining so let's specify something. How about '-1'. Not sure if these return codes will get used later and I'll break something, but at least I am returning something deterministic. 
+Afer cleaning and building again, this warning has disappeared.
+
+No more addressable warnings. So that's it. That's the build. 
+
+
+## The Output of build
+The output of build has 7 executable files. This is another interesting observation. Instead of building a huge monolithic process, Linus is building small processes that will work together. I suppose these processes will be stiched together in some other programs or a bash script. That's a good lesson to remember. Don't build huge monoliths, but try to build small processes that do specific jobs and leave other jobs to other processes.
 
 
 
